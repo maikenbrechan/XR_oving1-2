@@ -1,0 +1,59 @@
+spring:
+  servlet:
+    multipart:
+      enabled: true
+  h2:
+    console:
+      enabled: true
+      path: /h2/
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:h2:file:~/test
+    username: user
+    password:
+    driverClassName: org.h2.Driver
+  mail:
+    host: ${EMAIL_HOST:smtp.gmail.com}
+    username: ${EMAIL_USERNAME:hassano19988991@gmail.com}
+    password: ${EMAIL_PASSWORD:etxkzjeuvuupkpmq}
+    port: ${EMAIL_PORT:#{587}}
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: 'true'
+          starttls:
+            enable: 'true'
+            required: 'true'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+server:
+#  ssl:
+#    key-alias: localhost
+##    key-store-type: PKCS12
+#    key-store: src/main/resources/keystore/keystores/keystore.jks
+#    key-password: password
+#    key-store-password: password
+#    trust-store: src/main/resources/keystore/keystores/truststore.jks
+#    trust-store-password: password
+#    protocol: TLS
+#    enabled: true
+#    enabled-protocols: TLSv1.2
+#    client-auth: want
+  port: 8443
+#logging:
+  #level:
+    #ROOT: debug
+#org:
+#  apache:
+#    tomcat:
+#      websocket:
+#        SSL_TRUSTSTORE: src/main/resources/keystore/keystores/truststore.jks
+#        SSL_PROTOCOLS: TLS
+#        SSL_CONTEXT: ''
+#        SSL_TRUSTSTORE_PWD: ''
